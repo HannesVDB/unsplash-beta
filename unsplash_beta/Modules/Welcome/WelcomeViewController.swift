@@ -15,28 +15,33 @@ class WelcomeViewController: UIViewController {
     
     var viewModel: WelcomeViewModel?
     
+    private lazy var welcomeView: WelcomeView = {
+        let view = WelcomeView()
+        view.tapHandler = {
+            let controller = CollectionOverviewViewController()
+            let navigation = UINavigationController(rootViewController: controller)
+            let item = UITabBarItem(title: "Jef", image: nil, tag: 0)
+            navigation.tabBarItem = item
+            let tabBar = UITabBarController()
+            tabBar.setViewControllers([navigation], animated: true)
+            tabBar.modalPresentationStyle = .fullScreen
+            self.present(tabBar, animated: true)
+        }
+        return view
+    }()
+    
     // MARK: Views
-    
-    private lazy var titleLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.textColor = .label
-        return view
-    }()
-    
-    private lazy var imageView: UIImageView = {
-       let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawView()
+        self.view = welcomeView
+        
         viewModel?.reloadHandler = { [weak self] in
-            self?.imageView.sd_setImage(with: self?.viewModel?.randomImageURL)
+            if let view = self?.view as? WelcomeView {
+                view.updateImage(self?.viewModel?.randomImageURL)
+            }
         }
         viewModel?.errorHandler = { error in
             print("💣 error occured \(error.localizedDescription)")
@@ -44,15 +49,4 @@ class WelcomeViewController: UIViewController {
         viewModel?.reloadData()
     }
     
-    // MARK: - Methods
-    
-    private func drawView() {
-        view.backgroundColor = UIColor.systemBackground
-        view.addSubview(imageView)
-        imageView.constrainToSuperview()
-        view.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        titleLabel.text = "Welcome"
-    }
 }

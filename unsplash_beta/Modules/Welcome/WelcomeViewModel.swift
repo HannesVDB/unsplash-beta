@@ -23,6 +23,7 @@ class WelcomeViewModel: ViewModel {
     private func fetchRandomImage() {
         service.fetchRandom { [weak self] result in
             guard let self = self else { return }
+            print("Fetch image")
             switch result {
             case .success(let link):
                 guard let link = link,
