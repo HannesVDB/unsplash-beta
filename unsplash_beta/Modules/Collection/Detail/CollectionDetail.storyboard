@@ -15,13 +15,65 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blp-3b-DiE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-44-s8x">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="128"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rLL-rN-1Ze">
+                                                <rect key="frame" x="18" y="39" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="S2Q-06-yQO"/>
+                                                    <constraint firstAttribute="width" constant="50" id="ql3-zs-05U"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="rLL-rN-1Ze" firstAttribute="centerY" secondItem="Ahh-44-s8x" secondAttribute="centerY" id="1gR-Od-aaL"/>
+                                            <constraint firstItem="rLL-rN-1Ze" firstAttribute="leading" secondItem="Ahh-44-s8x" secondAttribute="leading" constant="18" id="7OR-sS-9HR"/>
+                                            <constraint firstAttribute="trailing" secondItem="rLL-rN-1Ze" secondAttribute="trailing" constant="18" id="mga-02-4aH"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-FC-Dxp">
+                                        <rect key="frame" x="86" y="0.0" width="328" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCq-xo-mpM">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="64"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Ut-LbL">
+                                                <rect key="frame" x="0.0" y="64" width="328" height="64"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="blp-3b-DiE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="OxP-qw-VlN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="blp-3b-DiE" secondAttribute="trailing" id="nU9-qT-ceI"/>
+                            <constraint firstItem="blp-3b-DiE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vLd-k5-JtW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ownerBioLabel" destination="XMM-Ut-LbL" id="GGm-fI-VZ7"/>
+                        <outlet property="ownerNameLabel" destination="sCq-xo-mpM" id="F0a-LB-6c3"/>
+                        <outlet property="profileImageView" destination="rLL-rN-1Ze" id="VCv-ML-jmr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="77"/>
+            <point key="canvasLocation" x="137.68115942028987" y="76.339285714285708"/>
         </scene>
     </scenes>
     <resources>

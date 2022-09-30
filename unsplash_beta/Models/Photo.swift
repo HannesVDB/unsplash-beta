@@ -8,12 +8,13 @@
 import Foundation
 
 struct Photo: Codable {
-    var id: String
+    var id: String?
     var urls: PhotoURL?
     
     struct PhotoURL: Codable {
         var full: String?
         var thumb: String?
+        var large: String?
     }
     
     var fullResImage: String? {
@@ -22,5 +23,9 @@ struct Photo: Codable {
     
     var thumbImage: String? {
         return urls?.thumb
+    }
+    
+    var largeImage: String? {
+        return urls?.large
     }
 }

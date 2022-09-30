@@ -50,6 +50,15 @@ extension CollectionOverviewViewController: UICollectionViewDelegate, UICollecti
         cell.collection = item
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let item = viewModel.collections?[safe: indexPath.row], let id = item.id,
+              let controller = UIViewController.from(storyboard: "CollectionDetail") as? CollectionDetailViewController else { return }
+        let viewmodel = CollectionDetailViewModel(id: id)
+        controller.viewModel = viewmodel
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 class CollectionImageViewCell: UICollectionViewCell {

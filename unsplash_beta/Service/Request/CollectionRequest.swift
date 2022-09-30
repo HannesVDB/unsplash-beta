@@ -8,7 +8,12 @@
 import Cara
 
 struct CollectionRequest: Request {
+    var id: String?
+    
     var url: URL? {
+        if let id = id {
+            return URL(string: "collections/\(id)")
+        }
         return URL(string: "collections")
     }
     

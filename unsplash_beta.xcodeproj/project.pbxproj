@@ -214,9 +214,9 @@
 		84B218DE28E6EBAE008FA1F5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				84B218E328E6EBCC008FA1F5 /* CollectionDetail.storyboard */,
 				84B218DF28E6EBBA008FA1F5 /* CollectionDetailViewController.swift */,
 				84B218E128E6EBC3008FA1F5 /* CollectionDetailViewModel.swift */,
-				84B218E328E6EBCC008FA1F5 /* CollectionDetail.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
