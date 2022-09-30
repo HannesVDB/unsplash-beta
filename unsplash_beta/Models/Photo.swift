@@ -13,9 +13,14 @@ struct Photo: Codable {
     
     struct PhotoURL: Codable {
         var full: String?
+        var thumb: String?
     }
     
     var fullResImage: String? {
         return urls?.full
+    }
+    
+    var thumbImage: String? {
+        return urls?.thumb
     }
 }

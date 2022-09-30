@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Collection: Codable {
+public struct Collection: Codable {
     var title: String
-    var owner: String
+    var coverPhoto: Photo
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case coverPhoto = "cover_photo"
+    }
 }

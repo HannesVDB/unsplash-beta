@@ -20,12 +20,8 @@ class WelcomeViewController: UIViewController {
         view.tapHandler = {
             let controller = CollectionOverviewViewController()
             let navigation = UINavigationController(rootViewController: controller)
-            let item = UITabBarItem(title: "Jef", image: nil, tag: 0)
-            navigation.tabBarItem = item
-            let tabBar = UITabBarController()
-            tabBar.setViewControllers([navigation], animated: true)
-            tabBar.modalPresentationStyle = .fullScreen
-            self.present(tabBar, animated: true)
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true)
         }
         return view
     }()

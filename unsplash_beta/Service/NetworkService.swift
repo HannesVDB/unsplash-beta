@@ -9,6 +9,7 @@ import Cara
 
 public protocol NetworkService {
     func fetchRandom(result: @escaping ((Result<String?, Error>) -> Void))
+    func fetchCollection(result: @escaping ((Result<[Collection]?, Error>) -> Void))
 }
 
 public class WebService: NetworkService {
@@ -20,6 +21,19 @@ public class WebService: NetworkService {
             switch response {
             case .success(let photo):
                 result(.success(photo?.fullResImage))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    public func fetchCollection(result: @escaping ((Result<[Collection]?, Error>) -> Void)) {
+        let request = CollectionRequest()
+        let serializer = CodableSerializer<[Collection]>()
+        service.execute(request, with: serializer) { response in
+            switch response {
+            case .success(let collections):
+                result(.success(collections))
             case .failure(let error):
                 print(error)
             }

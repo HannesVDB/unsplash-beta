@@ -21,6 +21,6 @@ class UnsplashConfiguration: Configuration {
     }
     
     func headers(for request: Request) -> RequestHeaders? {
-        return ["Authorization": "Client-ID -0RgDKf47UtzhAqmP7xy9iSZEwnj9-I5c-agpoLpcqY"]
+        return ["Authorization": "Client-ID m81TcOf6frTeO2vy6rg2CxDU3blZMkQGSJhOiXHbhEg"]
     }
 }
