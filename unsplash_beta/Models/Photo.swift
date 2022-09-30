@@ -9,4 +9,13 @@ import Foundation
 
 struct Photo: Codable {
     var id: String
+    var urls: PhotoURL?
+    
+    struct PhotoURL: Codable {
+        var full: String?
+    }
+    
+    var fullResImage: String? {
+        return urls?.full
+    }
 }

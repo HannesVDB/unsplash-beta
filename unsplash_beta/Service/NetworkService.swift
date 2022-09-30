@@ -19,7 +19,7 @@ public class WebService: NetworkService {
         service.execute(request, with: serializer) { response in
             switch response {
             case .success(let photo):
-                result(.success(photo?.id))
+                result(.success(photo?.fullResImage))
             case .failure(let error):
                 print(error)
             }

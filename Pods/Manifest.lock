@@ -1,10 +1,18 @@
 PODS:
   - Cara (1.0.0)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
   - Stella (1.3.0)
 
 DEPENDENCIES:
   - Cara (from `https://github.com/icapps/ios-cara.git`, commit `79057213237f872a317221f4922f1a0fef619ad4`)
+  - SDWebImage
   - Stella (from `https://github.com/icapps/ios-stella.git`, commit `ae5253054240231b75c9dd6070148a754119dcde`)
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   Cara:
@@ -24,8 +32,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Cara: 7bd0fc988ccc33954be01e8b2a61ffd213f4dd81
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
   Stella: 87540c2269678696a491893a26472c6fba24c489
 
-PODFILE CHECKSUM: 35e70551ef5e66498e8ca8f2e04c5395faa47d51
+PODFILE CHECKSUM: 24f1270bff550decbbbc1e94b4a1a14d40bccb1e
 
 COCOAPODS: 1.11.2
